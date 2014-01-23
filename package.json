@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/gergelyke/restify-cache/issues"
   },
-  "homepage": "https://github.com/gergelyke/restify-cache"
+  "homepage": "https://github.com/gergelyke/restify-cache",
+  "dependencies": {
+    "redis": "~0.10.0",
+    "hiredis": "~0.1.16"
+  }
 }
