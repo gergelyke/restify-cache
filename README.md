@@ -25,7 +25,8 @@ server.use(cache.before);
 ```
 
 You have to subscribe for the server's after event as well.
-__!!!WARNING! In your route handlers, you always have to call `next()`!!!__
+
+__WARNING! In your route handlers, you always have to call `next()`!__
 
 ```
 server.on('after', cache.after);
