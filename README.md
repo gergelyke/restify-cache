@@ -14,7 +14,7 @@ cache.config({
     redisPort: 6379,        //default: '6379'
     redisHost: 'localhost', //default: 'localhost'
     redisOptions: {},       //optional
-    ttl: 60 * 60 * 1000     //default:  60 * 60 * 1000
+    ttl: 60 * 60            //default:  60 * 60; in seconds
 });
 ```
 
