@@ -1,6 +1,6 @@
 Restify-cache
 -------------
-Based on the query string, it will store/retrieve the responses from Redis.
+Based on the query string, it will store/retrieve JSON responses from Redis.
 
 ### Install ###
 
