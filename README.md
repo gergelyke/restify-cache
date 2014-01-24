@@ -4,7 +4,7 @@ Based on the query string, it will store/retrieve JSON responses from Redis.
 
 ### Install ###
 
-will be soon on NPM
+`npm install restify-cache`
 
 ### Usage ###
 
