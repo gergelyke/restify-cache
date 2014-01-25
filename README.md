@@ -2,9 +2,8 @@ Restify-cache
 -------------
 Based on the query string, it will store/retrieve JSON responses from Redis.
 
-### Install ###
+[![NPM](https://nodei.co/npm/restify-cache.png)](https://nodei.co/npm/restify-cache/)
 
-`npm install restify-cache`
 
 ### Usage ###
 
