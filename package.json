@@ -1,6 +1,6 @@
 {
   "name": "restify-cache",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Restify cache using Redis",
   "main": "index.js",
   "scripts": {
