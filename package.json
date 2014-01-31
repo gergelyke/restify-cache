@@ -4,7 +4,7 @@
   "description": "Restify cache using Redis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "dependencies": {
     "redis": "~0.10.0",
     "hiredis": "~0.1.16"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0"
   }
 }
