@@ -1,7 +1,37 @@
-describe('Setting', function() {
+describe('Redis-cache', function() {
 
-  it('', function() {
+  describe('saves', function() {
+    it.only('responseheaders', function(done) {
+      cache.after({
+        url: '/beer'
+      }, {
+        headers: function () {
+          return {
+            'Accept': 'application/xml'
+          };
+        }
+      }, null, null, function (err) {
+        if (err) {
+          return done (err);
+        }
+        redis.get(HEADER_PREFIX + '/beer', function(err, data) {
+          data.should.equal('{"Accept":"application/xml"}');
+          done();
+        });
+      })
+    });
 
+    it('payload', function(done) {
+      cache.after({
+        url: '/beer'
+      })
+    });
+  });
+
+  describe('retrieves', function() {
+    it('a response with headers', function() {
+
+    });
   });
 
 });
