@@ -1,6 +1,17 @@
 describe('Redis-cache', function() {
 
   describe('saves', function() {
+
+
+    afterEach(function (done) {
+      redis.del(HEADER_PREFIX + '/beer', function (err) {
+        if (err) {
+          return done(err);
+        }
+        redis.del(PAYLOAD_PREFIX + '/beer', done);
+      });
+    });
+
     it.only('responseheaders', function(done) {
       cache.after({
         url: '/beer'
