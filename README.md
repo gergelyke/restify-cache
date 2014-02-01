@@ -3,6 +3,7 @@ Restify-cache
 Based on the query string, it will store/retrieve JSON responses from Redis.
 This is a Work In Progress, not ready for production (headers are not cached as of now).
 
+[![Build Status](https://travis-ci.org/gergelyke/restify-cache.png?branch=feature/test)](https://travis-ci.org/gergelyke/restify-cache)
 [![NPM](https://nodei.co/npm/restify-cache.png)](https://nodei.co/npm/restify-cache/)
 
 
