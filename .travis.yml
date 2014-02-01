@@ -1,0 +1,4 @@
+#set node version to latest stable
+language: node_js
+node_js:
+  - "0.10"
