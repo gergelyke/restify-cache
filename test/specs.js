@@ -72,8 +72,47 @@ describe('Redis-cache', function () {
   });
 
   describe('retrieves', function () {
-    it('a response with headers', function () {
 
+    beforeEach(function (done) {
+      cache.after({
+        url: testUrl
+      }, {
+        headers: function () {
+          return {
+            'Accept': 'application/xml'
+          };
+        },
+        _data: JSON.stringify({
+          'testing': 1,
+          'expect': 'works'
+        })
+      }, null, null, done);
+    });
+
+    afterEach(function (done) {
+      redis.del(HEADER_PREFIX + testUrl, function (err) {
+        if (err) {
+          return done(err);
+        }
+        redis.del(PAYLOAD_PREFIX + testUrl, function (err) {
+          done(err);
+        });
+      });
+    });
+
+    it('a response', function (done) {
+      cache.before({
+        url: testUrl
+      }, {
+        end: function (data) {
+          data.should.equal('{\"testing\":1,\"expect\":\"works\"}');
+          done();
+        },
+        setHeader: function() {},
+        writeHead: function() {}
+      }, function(){
+
+      });
     });
   });
 
