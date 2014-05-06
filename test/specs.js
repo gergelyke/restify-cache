@@ -2,7 +2,39 @@ describe('Redis-cache', function () {
 
   var testUrl = '/testing-the-redis-cache';
 
-  describe('saves', function () {
+    describe("errors do not write cache", function() {
+        it("do not throw if callback is not provided", function (done) {
+            var ex = new Error('expected');
+
+            var fn = function(){
+                cache.after({url: testUrl}, null, null, ex)
+            };
+
+            chai.expect(fn).to.not.throw();
+
+            done();
+        });
+
+        it("do not write cache in after", function (done) {
+            var ex = new Error('expected');
+            cache.after({url: testUrl}, null, null, ex, function (err) {
+
+                ex.should.be.equal(err);
+
+                redis.get(HEADER_PREFIX + testUrl, function (err, data) {
+                    if (err) {
+                        return done(err);
+                    }
+
+                    (data === null).should.equal(true);
+
+                    return done();
+                });
+            });
+        });
+    });
+
+    describe('saves', function () {
 
 
     afterEach(function (done) {
