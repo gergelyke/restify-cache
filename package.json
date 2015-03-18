@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/gergelyke/restify-cache",
   "dependencies": {
-    "redis": "~0.10.0",
-    "hiredis": "~0.1.16"
+    "hiredis": "~0.1.16",
+    "lodash": "~3.5.0",
+    "redis": "~0.10.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
