@@ -12,10 +12,14 @@ This is a Work In Progress, not ready for production (headers are not cached as 
 ```
 var cache = require('restify-cache');
 cache.config({
-    redisPort: 6379,        //default: '6379'
-    redisHost: 'localhost', //default: 'localhost'
-    redisOptions: {},       //optional
-    ttl: 60 * 60            //default:  60 * 60; in seconds
+    redisPort: 6379,            //Number (default: '6379')
+    redisHost: 'localhost',     //String (default: 'localhost')
+    redisOptions: {},           //Object (optional)
+    redisAuth: 'password'       //String (optional)
+    prefix: 'myname',           //String (optional, this will add a string prefix to the redis key)
+    cacheHeader: 'x-api-key',   //String (optional, this will cache any request with this header key)
+    cacheMethods: ['GET']       //Array  (optional, will only cache specified request methods; default ['GET']
+    ttl: 60 * 60                //Number (optional, default:  60 * 60; in seconds)
 });
 ```
 
